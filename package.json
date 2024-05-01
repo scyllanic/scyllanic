@@ -1,0 +1,56 @@
+{
+  "name": "scyllanic",
+  "version": "0.0.1",
+  "description": "ScyllaDB ORM/ODM tool written with Typescript",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "clean": "rimraf build",
+    "prebuild": "npm run clean && npm run lint",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ./build/index.js",
+    "prepublish": "npm run build",
+    "pretest": "npm run build",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scyllanic/scyllanic.git"
+  },
+  "keywords": [
+    "scylla",
+    "scylladb",
+    "orm",
+    "odm",
+    "typescript",
+    "model",
+    "schema",
+    "database",
+    "data",
+    "query",
+    "nosql",
+    "db"
+  ],
+  "author": "akadirdev",
+  "license": "MIT",
+  "dependencies": {
+    "cassandra-driver": "^4.7.2",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
+  }
+}
